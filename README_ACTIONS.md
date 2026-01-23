@@ -38,15 +38,18 @@ This workflow:
 
 ### 1. Enable LLM Analysis (Optional)
 
-To enable full LLM analysis with OpenAI:
+To enable full LLM analysis with OpenRouter (recommended):
 
 1. Go to repository **Settings** → **Secrets and variables** → **Actions**
 2. Click **New repository secret**
-3. Name: `OPENAI_API_KEY`
-4. Value: Your OpenAI API key
+3. Name: `OPENROUTER_API_KEY`
+4. Value: Your OpenRouter API key
 5. Click **Add secret**
+6. (Optional) Add `OPENROUTER_MODEL` secret (defaults to `openai/gpt-4o`)
 
-**Note:** If the API key is not set, the analysis will use a mock/fallback analysis that still provides useful insights.
+Alternatively, you can use `OPENAI_API_KEY` for direct OpenAI access.
+
+**Note:** If no API key is set, the analysis will use a mock/fallback analysis that still provides useful insights.
 
 ### 2. Enable GitHub Pages
 
@@ -104,8 +107,9 @@ To enable full LLM analysis with OpenAI:
 
 ### LLM analysis not working
 
-- Verify `OPENAI_API_KEY` secret is set correctly
+- Verify `OPENROUTER_API_KEY` (or `OPENAI_API_KEY`) secret is set correctly
 - Check API key has sufficient credits
+- Verify model name is correct (if using custom `OPENROUTER_MODEL`)
 - Fallback analysis will run if API is unavailable
 
 ### Results not appearing on site

@@ -36,11 +36,14 @@ This page displays the results of automated analysis performed by GitHub Actions
 
 ## Configuration
 
-To enable LLM analysis, add your OpenAI API key as a GitHub secret:
+To enable LLM analysis, add your OpenRouter API key as a GitHub secret:
 - Go to Settings → Secrets and variables → Actions
-- Add a new secret: `OPENAI_API_KEY`
+- Add a new secret: `OPENROUTER_API_KEY`
+- Optionally set `OPENROUTER_MODEL` (defaults to `openai/gpt-4o`)
 
-If the API key is not set, the analysis will use a mock/fallback analysis.
+Alternatively, you can use `OPENAI_API_KEY` for direct OpenAI access.
+
+If no API key is set, the analysis will use a mock/fallback analysis.
 
 ---
 

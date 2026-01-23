@@ -15,7 +15,7 @@ try:
     HAS_OPENAI = True
 except ImportError:
     HAS_OPENAI = False
-    print("Warning: OpenAI not available. Using mock analysis.")
+    print("Warning: OpenAI SDK not available. Using mock analysis.")
 
 def encode_image(image_path: Path) -> str:
     """Encode image to base64."""
@@ -66,17 +66,29 @@ def get_figures() -> List[Dict]:
     return figures
 
 def analyze_with_llm(results: Dict, sample_data: List[Dict], figures: List[Dict]) -> str:
-    """Use LLM to analyze results."""
+    """Use LLM to analyze results via OpenRouter."""
     
     if not HAS_OPENAI:
         return generate_mock_analysis(results, sample_data, figures)
     
-    api_key = os.getenv("OPENAI_API_KEY")
+    # Try OpenRouter first, then OpenAI as fallback
+    api_key = os.getenv("OPENROUTER_API_KEY") or os.getenv("OPENAI_API_KEY")
     if not api_key:
-        print("Warning: OPENAI_API_KEY not set. Using mock analysis.")
+        print("Warning: OPENROUTER_API_KEY or OPENAI_API_KEY not set. Using mock analysis.")
         return generate_mock_analysis(results, sample_data, figures)
     
-    client = OpenAI(api_key=api_key)
+    # Use OpenRouter if OPENROUTER_API_KEY is set, otherwise use OpenAI
+    use_openrouter = os.getenv("OPENROUTER_API_KEY") is not None
+    
+    if use_openrouter:
+        model = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o")  # Default to GPT-4o via OpenRouter
+        print(f"Using OpenRouter with model: {model}")
+        # Client will be created in try block with proper headers
+        client = None  # Will be set in try block
+    else:
+        client = OpenAI(api_key=api_key)
+        model = "gpt-4o"
+        print("Using OpenAI API")
     
     # Prepare context
     context = f"""
@@ -128,8 +140,21 @@ def analyze_with_llm(results: Dict, sample_data: List[Dict], figures: List[Dict]
             })
     
     try:
+        # OpenRouter requires specific headers
+        if use_openrouter:
+            # Create client with default headers for OpenRouter
+            from openai import OpenAI
+            client = OpenAI(
+                api_key=api_key,
+                base_url="https://openrouter.ai/api/v1",
+                default_headers={
+                    "HTTP-Referer": "https://github.com/InquiryInstitute/diophantine",
+                    "X-Title": "Diophantine Constraint Analysis"
+                }
+            )
+        
         response = client.chat.completions.create(
-            model="gpt-4o",  # or "gpt-4-vision-preview" for vision
+            model=model,
             messages=messages,
             max_tokens=2000,
             temperature=0.7
@@ -137,7 +162,9 @@ def analyze_with_llm(results: Dict, sample_data: List[Dict], figures: List[Dict]
         
         return response.choices[0].message.content
     except Exception as e:
-        print(f"Error calling OpenAI API: {e}")
+        print(f"Error calling LLM API: {e}")
+        import traceback
+        traceback.print_exc()
         return generate_mock_analysis(results, sample_data, figures)
 
 def generate_mock_analysis(results: Dict, sample_data: List[Dict], figures: List[Dict]) -> str:
@@ -187,7 +214,7 @@ Analysis completed on {len(sample_data)} data points with {len(figures)} figures
 - Validate the conjectured growth rate formulas
 
 ---
-*Note: This is a mock analysis. For full LLM analysis, set OPENAI_API_KEY environment variable.*
+*Note: This is a mock analysis. For full LLM analysis, set OPENROUTER_API_KEY (preferred) or OPENAI_API_KEY environment variable.*
 """
     
     return analysis
