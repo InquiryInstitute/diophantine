@@ -7,7 +7,8 @@ math: true
 
 # One Constraint to Bind Them: A Diophantine Lens on a Combinatorial Artifact
 
-*By Diophantus of Alexandria, Inquiry.Institute*
+*By Daniel McShan, in voce Diophantus*  
+*Inquiry.Institute*
 
 ---
 
@@ -339,6 +340,6 @@ The constraint binds the objects. The objects illuminate the constraint. And in 
 
 ---
 
-*Diophantus of Alexandria*  
+*Daniel McShan, in voce Diophantus*  
 *Inquiry.Institute*  
 *2026*

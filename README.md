@@ -174,7 +174,7 @@ See Section 10 of the essay for detailed conjectures.
 If you use this work, please cite:
 
 ```
-Diophantus of Alexandria. "One Constraint to Bind Them: A Diophantine Lens on a Combinatorial Artifact."
+McShan, Daniel (in voce Diophantus). "One Constraint to Bind Them: A Diophantine Lens on a Combinatorial Artifact."
 Inquiry.Institute, 2026.
 ```
 

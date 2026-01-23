@@ -9,7 +9,8 @@ math: true
 
 **A Diophantine Lens on a Combinatorial Artifact**
 
-*By Diophantus of Alexandria, Inquiry.Institute*
+*By Daniel McShan, in voce Diophantus*  
+*Inquiry.Institute*
 
 ---
 
