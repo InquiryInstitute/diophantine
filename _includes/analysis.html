@@ -1,0 +1,27 @@
+---
+# Include LLM analysis results if available
+---
+
+{% assign analysis_file = 'results/llm_analysis.md' | prepend: site.source %}
+{% assign analysis_exists = false %}
+{% for file in site.static_files %}
+  {% if file.path == '/results/llm_analysis.md' %}
+    {% assign analysis_exists = true %}
+  {% endif %}
+{% endfor %}
+
+{% if analysis_exists %}
+<div class="analysis-section">
+  <h2>Automated Analysis Results</h2>
+  <div class="analysis-content">
+    {% capture analysis_content %}{% include_relative results/llm_analysis.md %}{% endcapture %}
+    {{ analysis_content | markdownify }}
+  </div>
+</div>
+{% else %}
+<div class="analysis-section">
+  <h2>Automated Analysis Results</h2>
+  <p><em>Analysis results will appear here after the workflow runs. The analysis workflow executes the notebook and uses an LLM to analyze the results.</em></p>
+  <p>Check the <a href="https://github.com/InquiryInstitute/diophantine/actions">Actions tab</a> to see the latest run status.</p>
+</div>
+{% endif %}

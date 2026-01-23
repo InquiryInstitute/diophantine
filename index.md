@@ -33,6 +33,7 @@ Count nonnegative integer solutions to:
 
 - [📄 Read the Essay]({{ site.baseurl }}/essay)
 - [📓 View the Colab Notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)
+- [🤖 Automated Analysis]({{ site.baseurl }}/analysis) - LLM-powered results analysis
 - [📋 Constraint Specification]({{ site.baseurl }}/constraint.yaml)
 - [👥 Reviewer Feedback]({{ site.baseurl }}/reviewers/)
 

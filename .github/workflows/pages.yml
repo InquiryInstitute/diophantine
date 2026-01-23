@@ -5,6 +5,10 @@ on:
     branches:
       - main
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Run Analysis and LLM Review"]
+    types:
+      - completed
 
 permissions:
   contents: read
@@ -24,6 +28,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: Download analysis results
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: analysis.yml
+          name: analysis-results
+          path: .
+          if_no_artifact_found: ignore
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
       
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1

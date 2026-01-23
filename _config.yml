@@ -19,9 +19,14 @@ exclude:
   - README.md
   - .gitignore
   - .git/
-  - results/
+  - results/*.json
+  - results/*.csv
   - figures/
   - diophantine_exploration.ipynb
+
+# Include analysis results markdown
+include:
+  - results/llm_analysis.md
 
 # Markdown settings
 markdown: kramdown
