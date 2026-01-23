@@ -48,6 +48,15 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+        continue-on-error: true
+      
+      - name: Check Pages Status
+        if: steps.pages.outcome == 'failure'
+        run: |
+          echo "::warning::GitHub Pages not enabled. Please enable it at:"
+          echo "https://github.com/InquiryInstitute/diophantine/settings/pages"
+          echo "Select 'GitHub Actions' as the source."
+          exit 1
       
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
