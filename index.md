@@ -34,7 +34,8 @@ Count nonnegative integer solutions to:
 ## Quick Navigation
 
 - [📄 Read the Essay]({{ site.baseurl }}/essay)
-- [📓 View the Colab Notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)
+- [📓 Open Colab Notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb) - Interactive notebook
+- [📊 View Results & Data]({{ site.baseurl }}/results/) - Generated data and figures
 - [🤖 Automated Analysis]({{ site.baseurl }}/analysis) - LLM-powered results analysis
 - [📋 Constraint Specification]({{ site.baseurl }}/constraint.yaml)
 - [👥 Reviewer Feedback]({{ site.baseurl }}/reviewers/)
@@ -61,8 +62,22 @@ diophantine/
 │   ├── hilbert_review.md
 │   └── tufte_review.md
 ├── results/                          # Generated data
+│   ├── multiplicity_samples.csv
+│   ├── summary.json
+│   └── llm_analysis.md
 └── figures/                          # Generated visualizations
+    ├── heatmap_log.png
+    ├── heatmap_linear.png
+    ├── slices_fixed_u.png
+    └── growth_rate.png
 ```
+
+## Direct Links
+
+- **📓 [Open in Google Colab](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)** - Run the notebook interactively
+- **📊 [View Results on GitHub](https://github.com/InquiryInstitute/diophantine/tree/main/results)** - Browse generated data files
+- **🖼️ [View Figures on GitHub](https://github.com/InquiryInstitute/diophantine/tree/main/figures)** - Browse generated visualizations
+- **📓 [Notebook Source](https://github.com/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)** - View raw notebook file
 
 ## Three Perspectives
 

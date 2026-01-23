@@ -12,6 +12,14 @@ math: true
 
 ---
 
+## Quick Links
+
+- [📓 Open Colab Notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb) - Run the analysis interactively
+- [📊 View Results & Figures]({{ site.baseurl }}/results/) - Generated data and visualizations
+- [📋 Constraint Specification]({{ site.baseurl }}/constraint.yaml) - Formal definition
+
+---
+
 ## 1. Prologue: Why Integer Constraints Are the Grammar of Counting
 
 In the beginning, there was counting. Before geometry, before algebra, before the elegant abstractions that now fill our libraries—there was the simple act of enumeration. How many ways can we arrange these stones? How many paths lead from here to there? How many allocations satisfy these constraints?
@@ -254,11 +262,16 @@ We implemented enumeration algorithms and computed $M(u,v)$ for $n=3, 4, 5$ and 
 - $M(10, 20) = 11$
 - $M(20, 30) = 21$
 
-**Visualizations**: See the accompanying Colab notebook for:
+**Visualizations**: See the [accompanying Colab notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb) for:
 - Heatmaps of $M(u,v)$ for various $n$
 - Scatter plots of solution projections
 - Growth rate plots
 - Congruence pattern analysis
+
+**Results & Data**: 
+- [View generated figures](https://github.com/InquiryInstitute/diophantine/tree/main/figures)
+- [Download results data](https://github.com/InquiryInstitute/diophantine/tree/main/results)
+- [Interactive notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)
 
 ---
 
