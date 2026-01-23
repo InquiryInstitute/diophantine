@@ -1,0 +1,110 @@
+# Diophantine Constraint Specification
+# Problem: Resource Allocation to Tasks
+
+name: "Resource Allocation Constraint"
+description: "Counting nonnegative integer solutions to a system of allocation constraints"
+
+# Canonical Form
+constraint:
+  equations:
+    - description: "Total allocation constraint"
+      equation: "x_1 + x_2 + ... + x_n = u"
+      symbolic: "sum_{i=1}^n x_i = u"
+    
+    - description: "Weighted allocation constraint"
+      equation: "x_1 + 2*x_2 + 3*x_3 + ... + n*x_n = v"
+      symbolic: "sum_{i=1}^n i * x_i = v"
+
+# Variable Domains
+variables:
+  x:
+    description: "Allocation vector (x_1, x_2, ..., x_n)"
+    domain: "Z_{\ge 0}^n"
+    bounds: "0 <= x_i <= u for all i"
+    meaning: "x_i = amount of resource allocated to task i"
+  
+  u:
+    description: "Total demand"
+    domain: "Z_{\ge 0}"
+    range: "[0, u_max]"
+    meaning: "Total amount to be allocated across all tasks"
+  
+  v:
+    description: "Weighted capacity"
+    domain: "Z_{\ge 0}"
+    range: "[u, n*u]"
+    meaning: "Weighted sum of allocations (weight = task index)"
+  
+  n:
+    description: "Number of tasks"
+    domain: "Z_{> 0}"
+    default: 3
+    meaning: "Fixed parameter: number of tasks/resource types"
+
+# Input Pair Definition
+input_pair:
+  definition: "(u, v) where u = total demand, v = weighted capacity"
+  interpretation: |
+    The input pair (u,v) parameterizes the combinatorial object set O(u,v):
+    - u: Total quantity to be allocated
+    - v: Weighted capacity constraint (tasks have weights 1, 2, ..., n)
+  
+  feasibility_region:
+    condition: "u <= v <= n*u"
+    explanation: |
+      Minimum v occurs when all allocation goes to task 1: v_min = u
+      Maximum v occurs when all allocation goes to task n: v_max = n*u
+
+# Multiplicity Definition
+multiplicity:
+  definition: "M(u,v) = #{x in Z_{\ge 0}^n : constraints satisfied}"
+  meaning: "Number of distinct allocation vectors satisfying both constraints"
+  computation_method: "Enumeration (direct or pruned based on constraint structure)"
+
+# Combinatorial Mapping
+combinatorial_mapping:
+  objects: "O(u,v) = set of n-tuples (x_1, ..., x_n) satisfying constraints"
+  encoding: "phi: O(u,v) -> Z^n, phi(x) = x (identity map)"
+  property: |
+    Each solution vector represents a unique allocation pattern:
+    - x_i units allocated to task i
+    - Total allocation = u
+    - Weighted allocation = v
+
+# Non-Engineered Justification
+derivation:
+  invariants:
+    - "Conservation of allocation: sum of all allocations equals total demand"
+    - "Weighted capacity: weighted sum equals capacity budget"
+  
+  natural_weights: "w_i = i (task index) - simplest natural weighting"
+  minimality: "Both constraints are necessary and sufficient"
+  robustness: "Constraint extends naturally to parameter changes"
+
+# Experiment Configuration
+experiment:
+  default_n: 3
+  u_range: [0, 50]
+  v_range: [0, 150]
+  enumeration_strategy: "pruned"  # or "direct"
+  caching: true
+
+# Output Specifications
+outputs:
+  figures:
+    - "heatmap_log.png: Multiplicity heatmap (log scale)"
+    - "heatmap_linear.png: Multiplicity heatmap (linear scale)"
+    - "slices_fixed_u.png: Slices of M(u,v) for fixed u"
+    - "geometry_3d.png: 3D scatter plots (n=3 only)"
+    - "growth_rate.png: Growth rate analysis"
+  
+  data:
+    - "multiplicity_samples.csv: Sample (u,v) pairs with counts"
+    - "summary.json: Summary statistics"
+    - "multiplicity_cache.json: Cached enumeration results"
+
+# References
+references:
+  problem_domain: "Resource allocation, scheduling, operations research"
+  related_constraints: "Partition problems, contingency tables, flow conservation"
+  mathematical_connections: "Integer partitions, lattice point counting, generating functions"
