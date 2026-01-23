@@ -12,6 +12,12 @@ This page displays the results of automated analysis performed by GitHub Actions
 1. **Notebook Execution**: The Colab notebook is run programmatically to generate results and figures
 2. **LLM Analysis**: An AI analyzes the generated data and visualizations to provide insights
 
+## Quick Links
+
+- [📓 Open Colab Notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb) - Interactive analysis
+- [📊 View Results & Data]({{ site.baseurl }}/results/) - All generated files
+- [📄 Read the Essay]({{ site.baseurl }}/essay)
+
 ---
 
 {% include analysis.html %}
