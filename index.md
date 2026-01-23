@@ -26,10 +26,14 @@ This research package explores a real-world combinatorics problem through the le
 ## Problem Statement
 
 Count nonnegative integer solutions to:
-- $x_1 + x_2 + \cdots + x_n = u$ (total allocation)
-- $x_1 + 2x_2 + 3x_3 + \cdots + nx_n = v$ (weighted capacity)
 
-**Multiplicity**: $M(u,v) = \#\{\mathbf{x} \in \mathbb{Z}_{\ge 0}^n : \text{constraints satisfied}\}$
+$$x_1 + x_2 + \cdots + x_n = u \quad \text{(total allocation)}$$
+
+$$x_1 + 2x_2 + 3x_3 + \cdots + nx_n = v \quad \text{(weighted capacity)}$$
+
+**Multiplicity**: 
+
+$$M(u,v) = \#\{\mathbf{x} \in \mathbb{Z}_{\ge 0}^n : \text{constraints satisfied}\}$$
 
 ## Quick Navigation
 
@@ -43,11 +47,13 @@ Count nonnegative integer solutions to:
 ## Key Results
 
 ### Feasibility Region
-Solutions exist only when: $u \le v \le n \cdot u$
+Solutions exist only when:
+
+$$u \le v \le n \cdot u$$
 
 ### Multiplicity Patterns
 - For fixed $u$, $M(u,v)$ is unimodal with peak near $v \approx \frac{n+1}{2} \cdot u$
-- Growth rate: $M(u,v) \sim O(u^{n-2})$ for typical $v$ values
+- Growth rate: $M(u,v) \sim O(u^{n-2})$ for typical $v$ values  
 - Congruence patterns reveal hidden structure
 
 ## Repository Structure

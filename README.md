@@ -12,10 +12,14 @@ A complete research package exploring a real-world combinatorics problem through
 ## Problem Statement
 
 Count nonnegative integer solutions to:
-- $x_1 + x_2 + \cdots + x_n = u$ (total allocation)
-- $x_1 + 2x_2 + 3x_3 + \cdots + nx_n = v$ (weighted capacity)
 
-**Multiplicity**: $M(u,v) = \#\{\mathbf{x} \in \mathbb{Z}_{\ge 0}^n : \text{constraints satisfied}\}$
+$$x_1 + x_2 + \cdots + x_n = u \quad \text{(total allocation)}$$
+
+$$x_1 + 2x_2 + 3x_3 + \cdots + nx_n = v \quad \text{(weighted capacity)}$$
+
+**Multiplicity**: 
+
+$$M(u,v) = \#\{\mathbf{x} \in \mathbb{Z}_{\ge 0}^n : \text{constraints satisfied}\}$$
 
 This constraint encodes a resource allocation problem: distribute $u$ units across $n$ tasks such that the weighted sum equals $v$.
 

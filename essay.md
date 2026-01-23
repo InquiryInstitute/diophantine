@@ -51,7 +51,8 @@ Consider a manufacturing facility that must allocate resources to production tas
 3. Each task receives at least its minimum required amount (which we can normalize to zero for simplicity).
 
 **The combinatorial artifact**: The set $\mathcal{O}(u,v)$ of all feasible allocation vectors, parameterized by:
-- $u$: Total demand (sum of all task requirements)
+
+- $u$: Total demand (sum of all task requirements)  
 - $v$: Number of resource types (or equivalently, the weighted capacity constraint)
 
 This is a classic problem in operations research, scheduling, and combinatorial optimization. It appears in production planning, project scheduling, network flow problems, and many other domains.
@@ -105,11 +106,14 @@ This is not arbitrary. In many real systems, tasks have different "costs" or "pr
 
 The mapping from combinatorial objects to Diophantine solutions is direct and bijective.
 
-**Objects**: $\mathcal{O}(u,v)$ = the set of all $n$-tuples of nonnegative integers $(x_1, \ldots, x_n)$ such that:
-- $\sum_{i=1}^n x_i = u$
-- $\sum_{i=1}^n i \cdot x_i = v$
+**Objects**: $\mathcal{O}(u,v)$ is the set of all $n$-tuples of nonnegative integers $(x_1, \ldots, x_n)$ such that:
 
-**Encoding map**: $\phi: \mathcal{O}(u,v) \to \mathbb{Z}^n$ is simply the identity:
+$$\sum_{i=1}^n x_i = u$$
+
+$$\sum_{i=1}^n i \cdot x_i = v$$
+
+**Encoding map**: The map $\phi: \mathcal{O}(u,v) \to \mathbb{Z}^n$ is simply the identity:
+
 $$\phi(x_1, \ldots, x_n) = (x_1, \ldots, x_n)$$
 
 **The property**: Each solution vector $\mathbf{x}$ represents a unique allocation pattern:
@@ -169,6 +173,7 @@ The intersection is a line (1-dimensional), and we seek integer points on this l
 ## 6. Perspective III — Multiplicity Heatmaps
 
 **Definition of multiplicity**: For an input pair $(u,v)$, the multiplicity $M(u,v)$ is:
+
 $$M(u,v) := \#\{\mathbf{x} \in \mathbb{Z}_{\ge 0}^n : x_1 + \cdots + x_n = u, \ x_1 + 2x_2 + \cdots + nx_n = v\}$$
 
 **Input pair interpretation**: 
@@ -203,8 +208,14 @@ This constraint is not reverse-engineered. It emerges naturally from the problem
 **Step 1: Identify invariants**
 
 In any resource allocation system, two quantities must be conserved:
-1. **Total allocation**: $\sum_{i=1}^n x_i = \text{total demand}$
-2. **Weighted allocation**: $\sum_{i=1}^n w_i x_i = \text{weighted capacity}$, where $w_i$ is the "cost" or "priority" of task $i$
+
+1. **Total allocation**: 
+   $$\sum_{i=1}^n x_i = \text{total demand}$$
+
+2. **Weighted allocation**: 
+   $$\sum_{i=1}^n w_i x_i = \text{weighted capacity}$$
+   
+   where $w_i$ is the "cost" or "priority" of task $i$.
 
 **Step 2: Choose a natural weighting**
 
@@ -310,11 +321,13 @@ We implemented enumeration algorithms and computed $M(u,v)$ for $n=3, 4, 5$ and 
 **Conjectures**:
 
 1. **Asymptotic formula**: For fixed $n$ and $u, v \to \infty$ with $v/u \to \alpha \in (1, n)$, there exists a limiting density function $f_n(\alpha)$ such that:
+
    $$M(u, \alpha u) \sim C_n(\alpha) \cdot u^{n-2}$$
    
    for some constant $C_n(\alpha)$.
 
 2. **Peak location**: For fixed $u$ and $n$, the value of $v$ that maximizes $M(u,v)$ is approximately:
+
    $$v^* \approx \frac{n+1}{2} \cdot u + O(1)$$
 
 3. **Congruence structure**: For $n=3$, $M(u,v) > 0$ if and only if $v - u \equiv 0 \pmod{\gcd(1,2)} = 1$ (always true), but there are finer congruence conditions for larger $n$.
