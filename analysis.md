@@ -2,6 +2,7 @@
 layout: page
 title: "Automated Analysis"
 permalink: /analysis/
+math: true
 ---
 
 # Automated Analysis Results

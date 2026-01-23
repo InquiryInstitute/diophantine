@@ -10,6 +10,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+
 # Site settings
 baseurl: "/diophantine"
 url: "https://inquiryinstitute.github.io"
@@ -24,15 +25,20 @@ exclude:
   - figures/
   - diophantine_exploration.ipynb
 
-# Include analysis results markdown
+# Include analysis results markdown and custom includes
 include:
   - results/llm_analysis.md
+  - _includes/head-custom.html
 
 # Markdown settings
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  math_engine: mathjax
+  math_engine_opts:
+    preview: true
+    preview_as_code: false
 
 # Collections
 collections:

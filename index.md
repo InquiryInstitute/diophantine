@@ -2,6 +2,7 @@
 layout: default
 title: "One Constraint to Bind Them"
 subtitle: "A Diophantine Lens on a Combinatorial Artifact"
+math: true
 ---
 
 # One Constraint to Bind Them

@@ -2,6 +2,7 @@
 layout: page
 title: "The Essay"
 permalink: /essay/
+math: true
 ---
 
 # One Constraint to Bind Them: A Diophantine Lens on a Combinatorial Artifact
