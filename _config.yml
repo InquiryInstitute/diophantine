@@ -26,7 +26,6 @@ exclude:
   - .git/
   - results/*.json
   - results/*.csv
-  - figures/
   - diophantine_exploration.ipynb
 
 # Include analysis results markdown and custom includes

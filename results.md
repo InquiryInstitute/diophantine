@@ -42,13 +42,30 @@ Run the notebook interactively to:
 All figures are saved in the [figures directory](https://github.com/InquiryInstitute/diophantine/tree/main/figures):
 
 ### Heatmaps
-- **[heatmap_log.png](https://github.com/InquiryInstitute/diophantine/blob/main/figures/heatmap_log.png)** - Multiplicity heatmap (log scale)
-- **[heatmap_linear.png](https://github.com/InquiryInstitute/diophantine/blob/main/figures/heatmap_linear.png)** - Multiplicity heatmap (linear scale)
+
+![Multiplicity Heatmap (Log Scale)]({{ site.baseurl }}/figures/heatmap_log.png)
+**[heatmap_log.png]({{ site.baseurl }}/figures/heatmap_log.png)** - Multiplicity heatmap (log scale)
+
+![Multiplicity Heatmap (Linear Scale)]({{ site.baseurl }}/figures/heatmap_linear.png)
+**[heatmap_linear.png]({{ site.baseurl }}/figures/heatmap_linear.png)** - Multiplicity heatmap (linear scale)
 
 ### Analysis Plots
-- **[slices_fixed_u.png](https://github.com/InquiryInstitute/diophantine/blob/main/figures/slices_fixed_u.png)** - Slices of $M(u,v)$ for fixed $u$ values
-- **[growth_rate.png](https://github.com/InquiryInstitute/diophantine/blob/main/figures/growth_rate.png)** - Growth rate analysis
-- **[geometry_3d.png](https://github.com/InquiryInstitute/diophantine/blob/main/figures/geometry_3d.png)** - 3D scatter plots of solution vectors (n=3)
+
+![Slices for Fixed u]({{ site.baseurl }}/figures/slices_fixed_u.png)
+**[slices_fixed_u.png]({{ site.baseurl }}/figures/slices_fixed_u.png)** - Slices of $M(u,v)$ for fixed $u$ values
+
+![Growth Rate Analysis]({{ site.baseurl }}/figures/growth_rate.png)
+**[growth_rate.png]({{ site.baseurl }}/figures/growth_rate.png)** - Growth rate analysis
+
+![3D Geometry]({{ site.baseurl }}/figures/geometry_3d.png)
+**[geometry_3d.png]({{ site.baseurl }}/figures/geometry_3d.png)** - 3D scatter plots of solution vectors (n=3)
+
+**Direct GitHub Links** (for downloading):
+- [heatmap_log.png](https://raw.githubusercontent.com/InquiryInstitute/diophantine/main/figures/heatmap_log.png)
+- [heatmap_linear.png](https://raw.githubusercontent.com/InquiryInstitute/diophantine/main/figures/heatmap_linear.png)
+- [slices_fixed_u.png](https://raw.githubusercontent.com/InquiryInstitute/diophantine/main/figures/slices_fixed_u.png)
+- [growth_rate.png](https://raw.githubusercontent.com/InquiryInstitute/diophantine/main/figures/growth_rate.png)
+- [geometry_3d.png](https://raw.githubusercontent.com/InquiryInstitute/diophantine/main/figures/geometry_3d.png)
 
 ## 📥 Download All Results
 

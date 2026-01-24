@@ -85,7 +85,7 @@ diophantine/
 ## Direct Links
 
 - **📓 [Open in Google Colab](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)** - Run the notebook interactively
-- **📊 [View Results on GitHub](https://github.com/InquiryInstitute/diophantine/tree/main/results)** - Browse generated data files
+- **📊 [View Results & Figures]({{ site.baseurl }}/results/)** - Browse generated data files and visualizations
 - **🖼️ [View Figures on GitHub](https://github.com/InquiryInstitute/diophantine/tree/main/figures)** - Browse generated visualizations
 - **📓 [Notebook Source](https://github.com/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)** - View raw notebook file
 

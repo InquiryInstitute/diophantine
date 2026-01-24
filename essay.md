@@ -282,7 +282,7 @@ We implemented enumeration algorithms and computed $M(u,v)$ for $n=3, 4, 5$ and 
 - Congruence pattern analysis
 
 **Results & Data**: 
-- [View generated figures](https://github.com/InquiryInstitute/diophantine/tree/main/figures)
+- [View generated figures]({{ site.baseurl }}/results/) - All visualizations with embedded images
 - [Download results data](https://github.com/InquiryInstitute/diophantine/tree/main/results)
 - [Interactive notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb)
 
