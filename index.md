@@ -35,6 +35,8 @@ $$x_1 + 2x_2 + 3x_3 + \cdots + nx_n = v \quad \text{(weighted capacity)}$$
 
 $$M(u,v) = \#\{\mathbf{x} \in \mathbb{Z}_{\ge 0}^n : \text{constraints satisfied}\}$$
 
+<div class="quick-links">
+
 ## Quick Navigation
 
 - [📄 Read the Essay]({{ site.baseurl }}/essay)
@@ -43,6 +45,8 @@ $$M(u,v) = \#\{\mathbf{x} \in \mathbb{Z}_{\ge 0}^n : \text{constraints satisfied
 - [🤖 Automated Analysis]({{ site.baseurl }}/analysis) - LLM-powered results analysis
 - [📋 Constraint Specification]({{ site.baseurl }}/constraint.yaml)
 - [👥 Reviewer Feedback]({{ site.baseurl }}/reviewers/)
+
+</div>
 
 ## Key Results
 

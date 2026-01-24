@@ -12,13 +12,15 @@ math: true
 
 ---
 
+<div class="quick-links">
+
 ## Quick Links
 
 - [📓 Open Colab Notebook](https://colab.research.google.com/github/InquiryInstitute/diophantine/blob/main/diophantine_exploration.ipynb) - Run the analysis interactively
 - [📊 View Results & Figures]({{ site.baseurl }}/results/) - Generated data and visualizations
 - [📋 Constraint Specification]({{ site.baseurl }}/constraint.yaml) - Formal definition
 
----
+</div>
 
 ## 1. Prologue: Why Integer Constraints Are the Grammar of Counting
 
